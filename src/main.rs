@@ -27,9 +27,9 @@ async fn main() -> std::io::Result<()> {
 
     let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
     builder
-        .set_private_key_file("zoeco.shop-key.pem", SslFiletype::PEM)
+        .set_private_key_file("adm.web-key.pem", SslFiletype::PEM)
         .unwrap();
-    builder.set_certificate_chain_file("zoeco.shop.pem").unwrap();
+    builder.set_certificate_chain_file("adm.web.pem").unwrap();
 
     HttpServer::new(|| {
         App::new()
